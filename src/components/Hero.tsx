@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Container, Typography, Button,TextField,InputAdornment,Menu,MenuItem  } from '@mui/material';
+import { Box, Container, Typography, Button, TextField, InputAdornment, Menu, MenuItem } from '@mui/material';
 import { motion } from 'framer-motion';
-import { ChevronsDown,Search as SearchIcon } from 'lucide-react';
-
+import { ChevronsDown, Search as SearchIcon } from 'lucide-react';
+import bg from "../../public/images/dialogBg.jpg"
+import Ani from "../../public/images/nature.gif"
 export default function Hero() {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -18,7 +19,7 @@ export default function Hero() {
         sx={{
           height: '80vh',
           position: 'relative',
-          backgroundImage: 'url(https://images.unsplash.com/photo-1672271878037-648fa7497c82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjg3fHxrb2RhaWthbmFsfGVufDB8fDB8fHww)',
+          backgroundImage: `url(${bg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           '&::before': {
@@ -28,7 +29,7 @@ export default function Hero() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(0,0,0,0.4)',
+            backgroundColor: 'rgba(0, 20, 51, 0.64)',
           }
         }}
       >
@@ -54,12 +55,13 @@ export default function Hero() {
               sx={{
                 fontWeight: 'bold',
                 mb: 2,
-                fontSize: { xs: '2.2rem', md: '3.75rem' }
+                fontSize: { xs: '2.2rem', md: '2.75rem' }
               }}
             >
               Welcome to Kodai Heaven
             </Typography>
           </motion.div>
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +101,7 @@ export default function Hero() {
             </Button> */}
           </motion.div>
         </Container>
-       {/* <Box
+        {/* <Box
       sx={{
          background: 'linear-gradient(180deg, #061625 0%, #153e6b 100%)',
         position: "absolute",
@@ -116,8 +118,8 @@ export default function Hero() {
         width:'100%'
       }}
     > */}
-      {/* Search Input Field */}
-      {/* <TextField
+        {/* Search Input Field */}
+        {/* <TextField
         variant="outlined"
         placeholder="Search..."
         size="small"
@@ -137,64 +139,64 @@ export default function Hero() {
         }}
       /> */}
 
-      {/* Search Button */}
-      <Button
-        endIcon={ <SearchIcon size={16} color="white" />}
-         id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        sx={{
-          background: "linear-gradient(93deg, #53b2fe, #065af3)",
-          color: "white",
-          px: 7,
-          py: 1,
-          fontWeight: "bold",
-          borderRadius: "50px",
-          // textTransform: "uppercase",
-          whiteSpace: "nowrap",
-          "&:hover": {
-            background: "linear-gradient(93deg, #065af3, #53b2fe)",
-          },
-            position: "absolute",
-        left: "50%",
-        transform: "translateX(-50%)",
-        bottom: "-21px",
-        display: "flex",
-        alignItems: "center",
-        gap: 1, 
-        bgcolor: "white",
-        px: 3,
-          letterSpacing:'1px',
-        // borderRadius: "50px",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        Search
-      </Button>
-          <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose}>Poondi</MenuItem>
-        <MenuItem onClick={handleClose}>Poombarai</MenuItem>
-        <MenuItem onClick={handleClose}>Kookal</MenuItem>
-         <MenuItem onClick={handleClose}>Mannavanur</MenuItem>
-           <MenuItem onClick={handleClose}>Kilavarai</MenuItem>
-      </Menu>
-    </Box>
 
-      
-     
+        <Button
+          endIcon={<SearchIcon size={16} color="white" />}
+          id="basic-button"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+          sx={{
+            background: "linear-gradient(93deg, #53b2fe, #065af3)",
+            color: "white",
+            px: 12,
+            py: 1.2,
+            fontWeight: "bold",
+            borderRadius: "50px",
+            // textTransform: "uppercase",
+            whiteSpace: "nowrap",
+            "&:hover": {
+              background: "linear-gradient(93deg, #065af3, #53b2fe)",
+            },
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)",
+            bottom: "-21px",
+            display: "flex",
+            alignItems: "center",
+            gap: .4,
+            bgcolor: "white",
+            // px: 3,
+            letterSpacing: '1px',
+            // borderRadius: "50px",
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          Search place
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem onClick={handleClose}>Poondi</MenuItem>
+          <MenuItem onClick={handleClose}>Poombarai</MenuItem>
+          <MenuItem onClick={handleClose}>Kookal</MenuItem>
+          <MenuItem onClick={handleClose}>Mannavanur</MenuItem>
+          <MenuItem onClick={handleClose}>Kilavarai</MenuItem>
+        </Menu>
+      </Box>
+
+
+
       <Box
         sx={{
-          marginTop:'35px',
+          marginTop: '35px',
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -206,7 +208,7 @@ export default function Hero() {
           color: "black",
         }}
       >
-       
+
         <motion.div
           animate={{ y: [0, 5, 0] }}
           transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
@@ -214,24 +216,31 @@ export default function Hero() {
           <ChevronsDown color="#363636" size={24} />
         </motion.div>
 
-        
+
         <motion.div
           animate={{ y: [0, -3, 0] }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <Typography sx={{ fontWeight: "200",fontsize:'12px', }}>
+          <Typography sx={{ fontWeight: "400", fontsize: '12px', }}>
             Explore More
           </Typography>
         </motion.div>
 
-       
+
+
         <motion.div
           animate={{ y: [0, 5, 0] }}
           transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
         >
-       <ChevronsDown color="#363636" size={24} />
+          <ChevronsDown color="#363636" size={24} />
         </motion.div>
+
+
       </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: -1, mb: -2 }}>
+        <img src={Ani} alt="Nature Booking" style={{ width: '100%', maxWidth: '200px', borderRadius: '12px' }} />
+      </Box>
+
     </>
   );
 }

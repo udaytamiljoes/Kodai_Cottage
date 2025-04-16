@@ -9,17 +9,17 @@ export default function RoomList() {
   const navigate = useNavigate();
 
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }}>
+    <Container maxWidth="lg" sx={{ py: 8 ,mt:-8}}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Typography variant="h3" component="h1" gutterBottom align="center" sx={{ mb: 2 }}>
+        <Typography fontSize={38} variant="h4" component="h2" gutterBottom align="center" sx={{ mb: 2 }}>
           Our Cottages
         </Typography>
         <Typography variant="h6" align="center" color="text.secondary" sx={{ mb: 6 }}>
-          Discover your perfect retreat in Kodaikanal
+        Your dream stay in Kodaikanal starts here
         </Typography>
       </motion.div>
 
@@ -68,16 +68,16 @@ export default function RoomList() {
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <Square size={16} style={{ marginRight: 4 }} />
                       <Typography variant="body2" color="text.secondary">
-                        {room.size} m²
+                        {room.size}Km away from kodaikanal
                       </Typography>
                     </Box>
                   </Box>
 
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 'auto' }}>
                     <Typography variant="h6" color="primary">
-                      ₹{room.price}
+                      ₹{room.price} 
                       <Typography component="span" variant="caption" color="text.secondary">
-                        /night
+                        (per head) / night
                       </Typography>
                     </Typography>
                     <Button 

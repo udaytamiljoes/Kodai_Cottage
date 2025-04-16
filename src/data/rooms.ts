@@ -5,14 +5,14 @@ export const rooms: Room[] = [
     id: 1,
     name: "Valley View Cottage",
     description: "Luxurious cottage with panoramic views of the Kodaikanal valley, featuring a private garden and outdoor seating area",
-    price: 4999,
-    image: "https://images.unsplash.com/photo-1587061949409-02df41d5e490?auto=format&fit=crop&q=80",
+    price: 1000,
+    image: "https://images.pexels.com/photos/179845/pexels-photo-179845.jpeg?auto=compress&cs=tinysrgb&w=600",
     amenities: ["Mountain View", "Private Garden", "Fireplace", "Room Service", "Free Wi-Fi", "24/7 Security", "Parking", "Restaurant", "Laundry", "Mini Bar"],
     maxOccupancy: 4,
-    size: 75,
+    size: 30,
     bedType: "King",
     rating: 4.8,
-    reviews: 124,
+    reviews: 10,
     location: {
       lat: 10.1984621,
       lng: 77.3297691

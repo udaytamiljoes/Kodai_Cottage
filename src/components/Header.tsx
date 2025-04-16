@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem
 import { Menu, X, Phone, Mail, Facebook, Instagram } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logo from "../../public/images/logo4.jpg"
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -48,6 +49,10 @@ export default function Header() {
             </Typography>
           </Box>
         </Container>
+
+        <Box>
+
+        </Box>
       </Box>
 
       <AppBar position="sticky" sx={{ bgcolor: 'white', boxShadow: 1 }}>
@@ -58,25 +63,31 @@ export default function Header() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Typography 
-                variant="h5" 
-                component="div" 
-                sx={{ 
-                  color: 'primary.main', 
-                  fontWeight: 'bold', 
-                  cursor: 'pointer',
+              <Box
+                sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 1
+                  gap: 1.2,
+                  cursor: 'pointer',
                 }}
                 onClick={() => navigate('/')}
               >
-                KC
-              </Typography>
+                <img
+                  src={logo}
+                  alt="Logo"
+                  style={{
+                    width: '90px',
+                    objectFit: 'contain',
+                  }}
+                />
+
+
+              </Box>
             </motion.div>
-            
+
+
             <Box sx={{ flexGrow: 1 }} />
-            
+
             {!isMobile ? (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
                 {menuItems.map((item, index) => (
@@ -86,8 +97,8 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Button 
-                      sx={{ 
+                    <Button
+                      sx={{
                         color: 'secondary.main',
                         fontWeight: 500,
                         '&:hover': {
@@ -134,7 +145,7 @@ export default function Header() {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         sx={{
-          '& .MuiDrawer-paper': { 
+          '& .MuiDrawer-paper': {
             width: 280,
             bgcolor: 'background.paper'
           },
@@ -151,9 +162,9 @@ export default function Header() {
               navigate(item === 'Home' ? '/' : `/${item.toLowerCase()}`);
               handleDrawerToggle();
             }}>
-              <Button 
-                fullWidth 
-                sx={{ 
+              <Button
+                fullWidth
+                sx={{
                   justifyContent: 'flex-start',
                   color: 'secondary.main',
                   '&:hover': {
