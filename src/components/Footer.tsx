@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Container, Grid, Typography, IconButton, Link } from '@mui/material';
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
+import logo from "../../public/images/favi.png"
 
 export default function Footer() {
   return (
@@ -17,26 +18,61 @@ export default function Footer() {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={4}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Typography sx={{color:'#1078af'}} variant="h6" gutterBottom>
+              {/* <Typography sx={{color:'#1078af'}} variant="h6" gutterBottom>
                 Kodai Haven Cottages
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2 }}>
+              </Typography> */}
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1.2,
+                  cursor: 'pointer',
+                  mb: 3
+                }}
+              // onClick={() => navigate('/')}
+              >
+                <img
+                  src={logo}
+                  alt="Logo"
+                  style={{
+                    width: '70px',
+                    objectFit: 'contain',
+                  }}
+                />
+
+
+              </Box>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 Experience the serenity of Kodaikanal with our luxurious cottages nestled in the heart of nature.
+
+              </motion.div>
+              <Typography variant="body2" sx={{ mb: 2 }}>
               </Typography>
               <Box sx={{ display: 'flex', gap: 1 }}>
                 <IconButton color="inherit" size="small">
                   <Facebook size={20} />
                 </IconButton>
-                <IconButton color="inherit" size="small">
-                  <Instagram size={20} />
+                <IconButton
+                  color="inherit"
+                  size="small"
+                  component="a"
+                  href="https://www.instagram.com/w_h_i_t_e_bee_200_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram size={20} style={{ color: 'white' }} />
                 </IconButton>
-                <IconButton color="inherit" size="small">
+                {/* <IconButton color="inherit" size="small">
                   <Twitter size={20} />
-                </IconButton>
+                </IconButton> */}
               </Box>
             </motion.div>
           </Grid>
@@ -53,13 +89,13 @@ export default function Footer() {
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                 <MapPin size={16} style={{ marginRight: 8 }} />
                 <Typography variant="body2">
-                  123 Valley Road, Kodaikanal, Tamil Nadu
+                  220 poondi, Kodaikanal, Tamil Nadu
                 </Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                 <Phone size={16} style={{ marginRight: 8 }} />
                 <Typography variant="body2">
-                  +91 98765 43210
+                  +91 63743 60962
                 </Typography>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -71,7 +107,7 @@ export default function Footer() {
             </motion.div>
           </Grid>
 
-          <Grid item xs={12} sm={4}>
+          {/* <Grid item xs={12} sm={4}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -96,13 +132,20 @@ export default function Footer() {
                 </Link>
               ))}
             </motion.div>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         <Box sx={{ borderTop: 1, borderColor: 'rgba(255,255,255,0.1)', mt: 4, pt: 4, textAlign: 'center' }}>
-          <Typography variant="body2">
+        <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Typography variant="body2">
             © {new Date().getFullYear()} Kodai Haven Cottages. All rights reserved.
           </Typography>
+            </motion.div>
+          
         </Box>
       </Container>
     </Box>

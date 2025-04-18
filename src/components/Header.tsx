@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem
 import { Menu, X, Phone, Mail, Facebook, Instagram } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import logo from "../../public/images/logo4.jpg"
+import logo from "../../public/images/logos4.jpg"
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);

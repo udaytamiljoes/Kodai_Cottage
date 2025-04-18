@@ -6,6 +6,7 @@ import bg from "../../public/images/dialogBg.jpg"
 import Ani from "../../public/images/nature.gif"
 import Next from "./Next";
 import { MainBeam } from "./MainBeam"
+import Img from "./Img"
 export default function Hero() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -219,6 +220,7 @@ export default function Hero() {
           height: "60px",
           // background: "linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(87, 35, 0, 0.88) 100%)",
           color: "black",
+          mb:3 
         }}
       >
 
@@ -234,7 +236,7 @@ export default function Hero() {
           animate={{ y: [0, -3, 0] }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <Typography sx={{ fontWeight: "400", fontsize: '12px', }}>
+          <Typography sx={{ fontWeight: "400", fontsize: '12px',}}>
             Explore More
           </Typography>
         </motion.div>
@@ -250,9 +252,7 @@ export default function Hero() {
 
 
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: -1, mb: -2 }}>
-        <img src={Ani} alt="Nature Booking" style={{ width: '100%', maxWidth: '200px', borderRadius: '12px' }} />
-      </Box>
+      
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -261,6 +261,10 @@ export default function Hero() {
       >
         <MainBeam />
       </motion.div>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1, }}>
+        <img src={Ani} alt="Nature Booking" style={{ width: '100%', maxWidth: '200px', borderRadius: '12px' }} />
+      </Box>
+      {/* <Img /> */}
 
     </>
   );

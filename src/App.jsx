@@ -13,8 +13,9 @@ import { IconPhone } from '@tabler/icons-react';
 import Ani from "../public/images/ani.gif"
 import  Card  from "./components/Card"
 import  Lamp  from "./components/Lamp"
+import  Img  from "./components/Img"
 
-// Theme setup
+
 const theme = createTheme({
   palette: {
     primary: { main: '#061625' },
@@ -214,6 +215,7 @@ function App() {
             </>
           } />
           <Route path="/room/:id" element={<RoomDetail />} />
+          <Route path="/explore" element={<Img />} />
         </Routes>
 
         <Footer />
