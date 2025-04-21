@@ -20,19 +20,22 @@ export default function Hero() {
     <>
       <Box
         sx={{
-          height: '80vh',
+          height: '110vh',
           position: 'relative',
           backgroundImage: `url(${bg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          // textAlign: 'center',
+          pl: { xs: 0, md: 6 },
+          top: -150,
           '&::before': {
             content: '""',
             position: 'absolute',
-            top: 0,
+            top: -100,
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(0, 20, 51, 0.64)',
+            backgroundColor: 'rgba(0, 0, 0, 0.57)',
           }
         }}
       >
@@ -44,7 +47,8 @@ export default function Hero() {
             flexDirection: 'column',
             justifyContent: 'center',
             position: 'relative',
-            color: 'white'
+            color: 'white',
+            mt:5,
           }}
         >
           <motion.div
@@ -56,10 +60,11 @@ export default function Hero() {
               variant="h3"
               component="h2"
               sx={{
-                fontWeight: 'bold',
+                fontWeight: '500',
                 mb: 2,
-                fontSize: { xs: '2.2rem', md: '2.75rem' },
-                fontFamily: 'poppins'
+                fontSize: { xs: '2.2rem', md: '56px' },
+                letterSpacing: '1px', 
+                fontFamily: ''
               }}
             >
               Welcome to Kodai Heaven
@@ -76,14 +81,17 @@ export default function Hero() {
             <Typography
               variant="h5"
               sx={{
-                mb: 4,
+                mb: 10,
+               
                 maxWidth: 600,
-                fontSize: { xs: '1.2rem', md: '1.5rem' },
+                fontSize: { xs: '1rem', md: '1.2rem' },
                 display: 'inline',
+                letterSpacing: '.6px',
               }}
             >
               <span>
                 Experience luxury cottages nestled in the misty hills of Kodaikanal
+                <Box sx={{mt:2}}>
                 <Next
                   // ref={nextRef}
                   texts={[
@@ -109,6 +117,8 @@ export default function Hero() {
                   transition={{ type: 'spring', damping: 30, stiffness: 400 }}
                   rotationInterval={2000}
                 />
+                </Box>
+                
               </span>
             </Typography>
           </motion.div>
@@ -220,7 +230,7 @@ export default function Hero() {
           height: "60px",
           // background: "linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(87, 35, 0, 0.88) 100%)",
           color: "black",
-          mb:3 
+          mb: 3
         }}
       >
 
@@ -236,7 +246,7 @@ export default function Hero() {
           animate={{ y: [0, -3, 0] }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <Typography sx={{ fontWeight: "400", fontsize: '12px',}}>
+          <Typography sx={{ fontWeight: "400", fontsize: '12px', }}>
             Explore More
           </Typography>
         </motion.div>
@@ -252,7 +262,7 @@ export default function Hero() {
 
 
       </Box>
-      
+
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -264,6 +274,7 @@ export default function Hero() {
       <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1, }}>
         <img src={Ani} alt="Nature Booking" style={{ width: '100%', maxWidth: '200px', borderRadius: '12px' }} />
       </Box>
+      {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6472.903534133971!2d77.33019178760681!3d10.205786203474617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b077bad88ae2a79%3A0x1be348c9cf831e9d!2sPoondi%20view%20point!5e1!3m2!1sen!2sin!4v1745043049835!5m2!1sen!2sin" width="600" height="450"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
       {/* <Img /> */}
 
     </>

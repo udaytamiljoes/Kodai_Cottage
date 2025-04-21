@@ -14,6 +14,8 @@ import Ani from "../public/images/ani.gif"
 import  Card  from "./components/Card"
 import  Lamp  from "./components/Lamp"
 import  Img  from "./components/Img"
+import Login from './auth/Login';
+import Acc from './components/Acc';
 
 
 const theme = createTheme({
@@ -211,11 +213,13 @@ function App() {
               <RoomList />
               <Card />
               <Lamp/>
+              <Acc/>
 
             </>
           } />
           <Route path="/room/:id" element={<RoomDetail />} />
           <Route path="/explore" element={<Img />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
 
         <Footer />
