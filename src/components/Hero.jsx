@@ -52,9 +52,9 @@ export default function Hero() {
           }}
         >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+           initial={{ opacity: 0, y: -40 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 1 }}
           >
             <Typography
               variant="h3"
@@ -62,9 +62,11 @@ export default function Hero() {
               sx={{
                 fontWeight: '500',
                 mb: 2,
-                fontSize: { xs: '2.2rem', md: '56px' },
+                fontSize: { xs: '2.2rem', md: '60px' },
                 letterSpacing: '1px', 
-                fontFamily: ''
+
+                fontFamily: "Ribeye Marrow, serif",
+                // fontFamily: ''
               }}
             >
               Welcome to Kodai Heaven
@@ -74,9 +76,9 @@ export default function Hero() {
 
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+             initial={{ opacity: 0, y: 50 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 1 }}
           >
             <Typography
               variant="h5"
@@ -220,7 +222,7 @@ export default function Hero() {
 
       <Box
         sx={{
-          marginTop: '35px',
+          marginTop: '-70px',
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -230,7 +232,7 @@ export default function Hero() {
           height: "60px",
           // background: "linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(87, 35, 0, 0.88) 100%)",
           color: "black",
-          mb: 3
+          mb: 6
         }}
       >
 
@@ -241,7 +243,12 @@ export default function Hero() {
           <ChevronsDown color="#363636" size={24} />
         </motion.div>
 
-
+        {/* <motion.div
+           initial={{ opacity: 0, y: -40 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 1 }}
+          ></motion.div> */}
+          
         <motion.div
           animate={{ y: [0, -3, 0] }}
           transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}

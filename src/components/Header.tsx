@@ -4,6 +4,7 @@ import { Menu, X, Phone, Mail, Facebook, Instagram, Home, Hotel, Compass, PhoneC
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import logo from "../../public/images/kodai.png"
+import { IconMenuDeep } from '@tabler/icons-react';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function Header() {
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.09, duration: 0.3 },
+      transition: { delay: i * 0.009, duration: 1 },
     }),
   };
 
@@ -135,7 +136,7 @@ export default function Header() {
                 aria-label="menu"
                 onClick={handleDrawerToggle}
               >
-                <Menu />
+                <IconMenuDeep />
               </IconButton>
             )}
             <motion.div
