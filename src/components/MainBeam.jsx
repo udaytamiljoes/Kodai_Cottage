@@ -1,7 +1,7 @@
 import React from "react";
 import { BackgroundBeamsWithCollision } from "./beams";
 import { Box, Card, Grid } from "@mui/material";
-import Ani from "../../public/images/kodai.png"
+import Ani from "../images/kodai.png"
 
 export function MainBeam() {
   return (

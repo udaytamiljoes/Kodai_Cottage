@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { LampContainer } from "./Lapms";
 import { Box, Card, Grid } from "@mui/material";
 import { Rate } from 'antd';
-import Ani1 from "../../public/images/ani2.gif"
-import Ani2 from "../../public/images/ani3.gif"
+import Ani1 from "../images/ani2.gif"
+import Ani2 from "../images/ani3.gif"
 
 export default function LampDemo() {
     return (

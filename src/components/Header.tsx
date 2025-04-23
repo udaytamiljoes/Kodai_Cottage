@@ -3,13 +3,17 @@ import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem
 import { Menu, X, Phone, Mail, Facebook, Instagram, Home, Hotel, Compass, PhoneCall } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import logo from "../../public/images/kodai.png"
+import logo from "../images/kodai.png"
 import { IconMenuDeep } from '@tabler/icons-react';
+// import { Popover, PopoverTrigger, PopoverContent, } from "@heroui/react";
+import { Popover, Space } from 'antd';
+
+
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile: boolean = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate();
   const text = "Booking your Cottage";
 
@@ -47,6 +51,16 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setVisible(false);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       {/* <Box sx={{ background: 'transparent', color: 'white', py: 1 }}>
@@ -138,6 +152,7 @@ export default function Header() {
               >
                 <IconMenuDeep />
               </IconButton>
+
             )}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -157,8 +172,9 @@ export default function Header() {
                 <img
                   src={logo}
                   alt="Logo"
+                  width={isMobile ? 80 : 100}
                   style={{
-                    width: '110px',
+
                     objectFit: 'contain',
                   }}
                 />
@@ -166,6 +182,26 @@ export default function Header() {
 
               </Box>
             </motion.div>
+            {
+              isMobile &&
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                {/* <Box sx={{ display: 'flex', gap: 2, }}>
+                  <IconButton color="inherit" size="small">
+                    <Facebook size={16} />
+                  </IconButton>
+                  <IconButton color="inherit" size="small">
+                    <Instagram size={16} />
+                  </IconButton>
+                </Box> */}
+                <Typography sx={{ border: '1px solid #EB5529', px: 2, py: 1, ml: 2, borderRadius: 2 }} variant="body2" component="span">
+                  {text.slice(0, 8)?.split("").map((char, index) => (
+                    <motion.span key={index} variants={textVariants} initial="hidden" animate="visible" custom={index}>
+                      {char}
+                    </motion.span>
+                  ))}
+                </Typography>
+              </Box>
+            }
             {
               !isMobile &&
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -184,6 +220,29 @@ export default function Header() {
                     </motion.span>
                   ))}
                 </Typography>
+                {/* <Popover color="success" showArrow offset={20} placement="bottom">
+                  <PopoverTrigger>
+                    <Button>Open Popover</Button>
+                  </PopoverTrigger>
+                  <PopoverContent>
+                    <div className="px-1 py-2">
+                      <div className="text-small font-bold">Popover Content</div>
+                      <div className="text-tiny">This is the popover content</div>
+                    </div>
+                  </PopoverContent>
+                </Popover> */}
+                {/* <Popover content={<Typography>Popover content</Typography>} title="Title" trigger="click">
+                  <Button>Click me</Button>
+                </Popover> */}
+                <Popover
+                  content={<Typography>Popover content</Typography>}
+                  title="Title"
+                  trigger="click"
+                  open={visible}
+                  onOpenChange={(newVisible) => setVisible(newVisible)}
+                >
+                  <Button color='secondary' variant='contained'>WHITE BEE</Button>
+                </Popover>
               </Box>
             }
 

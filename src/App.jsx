@@ -10,7 +10,7 @@ import Hero from './components/Hero';
 import { FaWhatsapp } from 'react-icons/fa';
 import { X } from 'lucide-react';
 import { IconPhone } from '@tabler/icons-react';
-import Ani from "../public/images/ani.gif"
+import Ani from "./images/ani.gif"
 import  Card  from "./components/Card"
 import  Lamp  from "./components/Lamp"
 import  Img  from "./components/Img"

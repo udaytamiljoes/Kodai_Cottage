@@ -1,15 +1,15 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { 
-  Container, 
-  Card, 
-  CardMedia, 
-  Typography, 
-  Grid, 
-  List, 
-  ListItem, 
-  ListItemIcon, 
-  ListItemText, 
+import {
+  Container,
+  Card,
+  CardMedia,
+  Typography,
+  Grid,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
   Button,
   Box,
   Paper,
@@ -39,14 +39,14 @@ export default function RoomDetail() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
-      <Button 
-        onClick={() => navigate('/')} 
-        variant="outlined" 
+      <Button
+        onClick={() => navigate('/')}
+        variant="outlined"
         sx={{ mb: 4 }}
       >
         Back to Rooms
       </Button>
-      
+
       <Grid container spacing={4}>
         <Grid item xs={12} md={8}>
           <motion.div
@@ -60,7 +60,7 @@ export default function RoomDetail() {
                 height="500"
                 image={room.image}
                 alt={room.name}
-                sx={{ 
+                sx={{
                   objectFit: 'cover',
                   background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                 }}
@@ -75,7 +75,7 @@ export default function RoomDetail() {
               <Typography variant="body1" color="text.secondary" paragraph>
                 Explore these amazing places within 2km of your stay
               </Typography>
-              
+
               <Grid container spacing={3}>
                 {room.nearbyAttractions.map((attraction, index) => (
                   <Grid item xs={12} sm={6} md={4} key={attraction.name}>
@@ -102,9 +102,9 @@ export default function RoomDetail() {
                             </Typography>
                           </Box>
                           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                            <Rating 
-                              value={attraction.rating} 
-                              readOnly 
+                            <Rating
+                              value={attraction.rating}
+                              readOnly
                               size="small"
                               icon={<Star size={16} />}
                             />
@@ -130,37 +130,37 @@ export default function RoomDetail() {
               </Typography>
               <Card>
                 <iframe
-  width="100%"
-  height="450"
-  style={{ border: 0 }}
-  loading="lazy"
-  allowFullScreen
-  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAGATg493UX7dU427hURQlooLc5UA4Mcdc&center=${room.location.lat},${room.location.lng}&zoom=15`}
-/>
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAGATg493UX7dU427hURQlooLc5UA4Mcdc&center=${room.location.lat},${room.location.lng}&zoom=15`}
+                />
 
               </Card>
             </Box>
           </motion.div>
         </Grid>
-        
+
         <Grid item xs={12} md={4}>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Paper elevation={3} sx={{ 
+            <Paper elevation={3} sx={{
               p: 3,
               background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)'
             }}>
               <Typography variant="h4" component="h1" gutterBottom>
                 {room.name}
               </Typography>
-              
+
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <Rating 
-                  value={room.rating} 
-                  readOnly 
+                <Rating
+                  value={room.rating}
+                  readOnly
                   precision={0.1}
                   icon={<Star size={20} />}
                 />
@@ -172,11 +172,11 @@ export default function RoomDetail() {
               <Typography variant="h5" color="primary" gutterBottom>
                 ₹{room.price} / night
               </Typography>
-              
+
               <Typography variant="body1" paragraph>
                 {room.description}
               </Typography>
-              
+
               <Box sx={{ mb: 3 }}>
                 <Grid container spacing={2}>
                   <Grid item xs={6}>
@@ -224,11 +224,11 @@ export default function RoomDetail() {
                 ))}
               </Grid>
 
-              <Button 
-                variant="contained" 
-                size="large" 
-                fullWidth 
-                sx={{ 
+              <Button
+                variant="contained"
+                size="large"
+                fullWidth
+                sx={{
                   mt: 4,
                   background: 'linear-gradient(45deg, #E31E24 30%, #FF4B2B 90%)',
                   boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',

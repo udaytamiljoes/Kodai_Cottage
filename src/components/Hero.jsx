@@ -2,8 +2,8 @@ import React from 'react';
 import { Box, Container, Typography, Button, TextField, InputAdornment, Menu, MenuItem } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ChevronsDown, Search as SearchIcon } from 'lucide-react';
-import bg from "../../public/images/dialogBg.jpg"
-import Ani from "../../public/images/nature.gif"
+import bg from "../images/dialogBg.jpg"
+import Ani from "../images/nature.gif"
 import Next from "./Next";
 import { MainBeam } from "./MainBeam"
 import Img from "./Img"
